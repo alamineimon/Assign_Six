@@ -7,7 +7,7 @@ const newsCategoriesLink = async () => {
 const displayAllNewsCategories = async () => {
     const newsCategories = await newsCategoriesLink()
     const newsCategorie = newsCategories.data.news_category;
-    console.log(newsCategorie);
+    // console.log(newsCategorie);
     const menu = document.getElementById('newsCategories')
     for (const categorie of newsCategorie) {
         // console.log(categorie.category_name);
@@ -20,5 +20,15 @@ const displayAllNewsCategories = async () => {
 
     }
 }
-newsCategoriesLink()
+// newsCategoriesLink()
 displayAllNewsCategories()
+
+
+
+const blogField = document.getElementById('blogField')
+blogField.addEventListener('click', function () {
+    const blogDisplay = document.getElementById('blogDisplay')
+    
+})
+
+// newsLink()
