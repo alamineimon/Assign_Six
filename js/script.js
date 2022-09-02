@@ -95,3 +95,13 @@ document.getElementById('blogField').addEventListener('click', function () {
 })
 
 // newsLink()
+
+
+
+const newsLink = async () => {
+    const res = await fetch('https://openapi.programming-hero.com/api/news/category/01')
+    const data = await res.json()
+    // return data
+    console.log(data.data[2]);
+}
+newsLink()
