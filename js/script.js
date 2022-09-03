@@ -9,19 +9,29 @@ const displayAllNewsCategories = async () => {
     const newsCategorie = newsCategories.data.news_category;
     // console.log(newsCategorie);
     const menu = document.getElementById('newsCategories')
+  // console.log(menu);
     for (const categorie of newsCategorie) {
-        // console.log(categorie.category_name);
+      // console.log(categorie);
+      // console.log(categorie.category_id);
 
         const li = document.createElement('li')
         li.innerHTML = `
-            <a class="text-decoration-none px-4 text-black-50" type="button" >${categorie.category_name}</a>
+            <a onclick="clickInterText()" class="text-decoration-none px-4 text-black-50" type="button" >${categorie.category_name}</a>
             `
-        menu.appendChild(li);
+      menu.appendChild(li);
+      // console.log(li.innerText);
 
-    }
+  }
+  
 }
+
 // newsCategoriesLink()
 displayAllNewsCategories()
+
+
+
+
+
 
 
 
@@ -94,7 +104,6 @@ document.getElementById('blogField').addEventListener('click', function () {
     blog.appendChild(div)
 })
 
-// newsLink()
 
 
 
@@ -102,6 +111,6 @@ const newsLink = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/news/category/01')
     const data = await res.json()
     // return data
-    console.log(data.data[2]);
+    // console.log(data.data[2]);
 }
 newsLink()
