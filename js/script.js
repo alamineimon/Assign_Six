@@ -151,7 +151,7 @@ const displayCategoryDetails = category => {
  
   // data found---------------------------------------------------------------
   if (category.length === 0) {
-    catCountElemnet.innerText = ('Sorry! No data found')
+    catCountElemnet.innerText = ('No data found')
   }
   else {
     catCountElemnet.innerText = (category.length + ' ' + 'items Found in this category');
@@ -184,7 +184,7 @@ const displayCategoryDetails = category => {
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">${category.title ? category.title : 'Title Not Found'}</h5>
-              <p class="card-text">${category.details.slice(0, 300)}...? ${category.details.slice(0, 300)}... : 'Category Not Found'</p>
+              <p class="card-text">${category.details.slice(0, 300) ? category.details.slice(0, 300) : 'Describtion Not Found'}...</p>
               <img src="${category.author.img ? category.author.img : 'Author Image Not Found'}" class="thumbnail-img" alt="...">
               <span >${category.author.name ? category.author.name : 'Author Name Not Found '}</span>
               <span class="mr-5 ps-5">View: ${category.total_view ? category.total_view : 'Total View Not Found'}</span>
