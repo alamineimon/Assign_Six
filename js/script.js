@@ -1,8 +1,12 @@
 
-
+// blog start here-------------------------------------------------------------------------
 document.getElementById('blogPost').addEventListener('click', function () {
   const blog = document.getElementById('blogView')
   const div = document.createElement('div')
+
+  blog.innerHTML = ''
+
+// blog inter HTML  here-------------------------------------------------------------------------
   div.innerHTML = `
     <div class="accordion col" id="accordionExample">
     <div class="accordion-item">
@@ -71,6 +75,9 @@ document.getElementById('blogPost').addEventListener('click', function () {
   blog.appendChild(div)
 })
 
+
+// Get All Category from Api-----------------------------------------------------------------------------
+
 const newsCategoriesLink = async () => {
   try {
     const res = await fetch('https://openapi.programming-hero.com/api/news/categories')
@@ -87,6 +94,8 @@ const newsCategoriesLink = async () => {
   //
 }
 
+
+// Add  All Category Item And Set Them To Button-------------------------------------------------------------------------
 const displayAllNewsCategories = async () => {
   const newsCategories = await newsCategoriesLink()
   const newsCategorie = newsCategories.data.news_category;
@@ -97,21 +106,28 @@ const displayAllNewsCategories = async () => {
   for (const categorie of newsCategorie) {
     // console.log(categorie);
     // console.log(categorie.category_id);
-
+    
+    // Add Button In All Category Item-------------------------------------------------------------------------
     const li = document.createElement('li')
     li.innerHTML = `
             <a onclick="LoadTotalNewsDetaild('${categorie.category_id}')" class="text-decoration-none px-4 text-black-50" type="button" >${categorie.category_name}</a>
             `
             menu.appendChild(li);       
-    // console.log(li.innerText);
+            // console.log(li.innerText);
   }
 }
 // newsCategoriesLink()
 displayAllNewsCategories()
 
 
+// Get Button All Post Items Forom Another Api-------------------------------------------------------------------------
 const LoadTotalNewsDetaild = async (id) => {
+  const spinner = document.getElementById('spinner');
+  spinner.classList.remove('d-none');
 
+  // spiner  start------------------------------------------------------
+  
+  
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`
   try {
     fetch(url)
@@ -124,9 +140,10 @@ const LoadTotalNewsDetaild = async (id) => {
   // fetch(url)
   //   .then(res => res.json())
   //   .then(data => displayCategoryDetails(data.data))
-
+  
 }
 
+// Create A Function to Get Category Input-------------------------------------------------------------------------
 const displayCategoryDetails = category => {
   // console.log(cat);
   const catCountElemnet = document.getElementById('categoryInputCount');
@@ -135,6 +152,17 @@ const displayCategoryDetails = category => {
 
   const categoryDetails = document.getElementById('categoryDetails');
   // const div = document.createElement('div')
+
+
+
+  // spinner stop here ------------------------------------------------------------------------
+  spinner.classList.add('d-none')
+  
+  
+  
+  
+  // Category Card Styling  ------------------------------------------------------------------------
+
   categoryDetails.innerHTML = ``;
   category.forEach(category => {
     const catDiv = document.createElement('div');

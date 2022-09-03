@@ -20,19 +20,21 @@
 <body>
     <header class="container">
         <section>
-            <!-- navber start -->
+            <!-- navber start  here------------------------------------------------------------->
             <nav class="navbar navbar-expand-lg navbar-light bg-light px-5 mb-3">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand fs-3" href="#">Peacock <span class=" fw-bolder">News</span></a>
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        </ul>
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand fs-3" href="#">Peacock <span class=" fw-bolder">News</span></a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        
+                    </ul>
+                    
+                    <!-- navber button  here------------------------------------------------------------->
                         <form class="d-flex ">
                             <a class="text-decoration-none  me-4" type="submit" id="newsBody">Home</a>
                             <a id="blogPost" class=" text-decoration-none me-4" type="button">Blog</a>
@@ -46,6 +48,7 @@
     <main>
         <section>
             <div>
+                    <!-- new category list   here------------------------------------------------------------->
                 <ul id="newsCategories"
                     class="d-lg-flex d-sm-block list-unstyled align-items-center justify-content-center ">
 
@@ -53,15 +56,26 @@
             </div>
         </section>
 
-        <!-- show category item quentity here  -->
-        <section class="text-center  fw-bold"><span id="categoryInputCount"></span> Item Selected</section>
+        <!-- spinner here ------------------------------------------------------------------------------------>
+        <section>
+            <div class="d-flex justify-content-center">
+                <button id="spinner" class="btn btn-success d-none d-flex justify-content-center" type="button" disabled>
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
+           </div>
+        </section>
+
+
+        <!-- show category item quentity here----------------------------------------------------------------->
+        <section class="ms-5 mb-2 fw-bold"><span id="categoryInputCount"></span> item's Found in this category</section>
         
         
-        <!-- show category  here  -->
+        <!-- show category  here----------------------------------------------------------->
         <section id="categoryDetails" class="ms-5">
         </section>
         
-        <!-- show category item here  -->
+        <!-- show category item here---------------------------------------------------------------->
         <section id="blogView">
 
         </section>
