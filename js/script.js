@@ -73,9 +73,19 @@ document.getElementById('blogPost').addEventListener('click', function () {
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <strong>Ans: </strong> The scope of a var variable is functional scope. The scope of a let variable is
-                block scope. The scope of a const variable is block scope. It can be updated and re-declared into the
-                scope.
+                Var: <br>
+                Earlier only var is there and he is the king of variable declarations. But there are some issues associated with variables declared with var, though. That is why let and const introduced.
+                <br>
+                Var declarations are globally scoped or function scoped. That means if a variable is declared with var outside a function then it is in the global scope(accessible anywhere). Otherwise, if they are inside a function we can only access them inside the function.
+                <br>
+                Let:<br>
+                It’s an enhanced version of var, it solves all the problems that come with the var keyword. Like, let is a block-scoped variable and we cannot re-declared but can be updated(re-assigned). You’ll see in the below example as it shows that let is preferable over var.
+                <br>
+                Here we can see that we can update the variable but cannot be re-declared that is why it throws an error and variables that are declared with let and const in block statements( if-else, while, for loop, etc..) are not accessible anywhere.
+                <br>
+                Const:<br>
+                Const declarations share some similarities with let declarations, but const variables cannot be updated or re-declared. It maintains the constant values.
+                Unlike var and let, if we are using const then it must be initialized at the same time when we declared the variable.
             </div>
         </div>
     </div>
@@ -89,9 +99,9 @@ document.getElementById('blogPost').addEventListener('click', function () {
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <strong>Ans:</strong> In regular JavaScript functions, arguments keywords can be used to access the
-                passed arguments when the function is invoked. But, arrow functions do not have their own arguments and
-                it uses the arguments from the outer function.
+                Arrow function — also called fat arrow function— is a new feature introduced in ES6 that is a more concise syntax for writing function expressions. While both regular JavaScript functions and arrow functions work in a similar manner, there are certain differences between them.
+                <br>
+                Arrow functions do not have an arguments binding. However, they have access to the arguments object of the closest non-arrow parent function. Named and rest parameters are heavily relied upon to capture the arguments passed to arrow functions.
             </div>
         </div>
     </div>
@@ -105,7 +115,7 @@ document.getElementById('blogPost').addEventListener('click', function () {
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <strong>Ans:</strong> Template literals provide an easy way to interpolate variables and expressions
+                Template literals provide an easy way to interpolate variables and expressions
                 into strings. The method is called string interpolation.Template literals are sometimes informally
                 called template strings, because they are used most commonly for string interpolation (to create strings
                 by doing substitution of placeholders). However, a tagged template literal may not result in a string;
