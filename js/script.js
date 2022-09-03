@@ -1,62 +1,4 @@
 
-const newsCategoriesLink = async () => {
-  // try {
-  //   const res = await fetch('https://openapi.programming-hero.com/api/news/categories')
-  //   const data = await res.json()
-  //   return data
-  // }
-  // catch (error) {
-  //   console.log(error);
-  // }
-  // 
-  const res = await fetch('https://openapi.programming-hero.com/api/news/categories')
-  const data = await res.json()
-  return data
-  //
-}
-
-const displayAllNewsCategories = async () => {
-  const newsCategories = await newsCategoriesLink()
-  const newsCategorie = newsCategories.data.news_category;
-  // console.log(newsCategorie);
-  const menu = document.getElementById('newsCategories')
-  // console.log(menu);
-  for (const categorie of newsCategorie) {
-    // console.log(categorie);
-    // console.log(categorie.category_id);
-
-    const li = document.createElement('li')
-    li.innerHTML = `
-            <a onclick="LoadTotalNewsDetaild('${categorie.category_id}')" class="text-decoration-none px-4 text-black-50" type="button" >${categorie.category_name}</a>
-            `
-    menu.appendChild(li);
-    // console.log(li.innerText);
-  }
-
-}
-// newsCategoriesLink()
-displayAllNewsCategories()
-
-
-
-const LoadTotalNewsDetaild = async (id) => {
-
-  const url = `https://openapi.programming-hero.com/api/news/category/${id}`
-  // try {
-  //   fetch(url)
-  //   .then(res => res.json())
-  //   .then(data => displayCategoryDetails(data.data))
-  // }
-  // catch (error) {
-  //   console.log(error);
-  // }
-
-  fetch(url)
-    .then(res => res.json())
-    .then(data => displayCategoryDetails(data.data))
-
-}
-
 
 document.getElementById('blogPost').addEventListener('click', function () {
   const blog = document.getElementById('blogView')
@@ -128,6 +70,67 @@ document.getElementById('blogPost').addEventListener('click', function () {
   `
   blog.appendChild(div)
 })
+
+
+
+
+const newsCategoriesLink = async () => {
+  try {
+    const res = await fetch('https://openapi.programming-hero.com/api/news/categories')
+    const data = await res.json()
+    return data
+  }
+  catch (error) {
+    console.log(error);
+  }
+  // 
+  // const res = await fetch('https://openapi.programming-hero.com/api/news/categories')
+  // const data = await res.json()
+  // return data
+  //
+}
+
+const displayAllNewsCategories = async () => {
+  const newsCategories = await newsCategoriesLink()
+  const newsCategorie = newsCategories.data.news_category;
+  // console.log(newsCategorie);
+  const menu = document.getElementById('newsCategories')
+  // console.log(menu);
+  for (const categorie of newsCategorie) {
+    // console.log(categorie);
+    // console.log(categorie.category_id);
+
+    const li = document.createElement('li')
+    li.innerHTML = `
+            <a onclick="LoadTotalNewsDetaild('${categorie.category_id}')" class="text-decoration-none px-4 text-black-50" type="button" >${categorie.category_name}</a>
+            `
+    menu.appendChild(li);
+    // console.log(li.innerText);
+  }
+
+}
+// newsCategoriesLink()
+displayAllNewsCategories()
+
+
+
+const LoadTotalNewsDetaild = async (id) => {
+
+  const url = `https://openapi.programming-hero.com/api/news/category/${id}`
+  try {
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayCategoryDetails(data.data))
+  }
+  catch (error) {
+    console.log(error);
+  }
+
+  // fetch(url)
+  //   .then(res => res.json())
+  //   .then(data => displayCategoryDetails(data.data))
+
+}
 
 
 const displayCategoryDetails = category => {
