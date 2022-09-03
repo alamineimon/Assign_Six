@@ -194,11 +194,11 @@ const displayCategoryDetails = category => {
                 <div class="modal-dialog">
                   <div class="modal-content">
                       <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">${category.title ? category.title : 'Title Not Found'}</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                          <h5 class="card-title">${category.title ? category.title : 'Title Not Found'}</h5>
+                          <img src="${category.image_url ? category.image_url : 'Image Not Found'}" class="img-thumbnail" alt="...">
                           <p class="card-text">${category.details.slice(0, 300)}...? ${category.details.slice(0, 300)}... : 'Category Not Found'</p>
                           <img src="${category.author.img ? category.author.img : 'Author Image Not Found'}" class="thumbnail-img" alt="...">
                           <span >${category.author.name ? category.author.name : 'Author Name Not Found '}</span>
