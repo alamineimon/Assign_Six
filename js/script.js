@@ -122,10 +122,10 @@ displayAllNewsCategories()
 
 // Get Button All Post Items Forom Another Api-------------------------------------------------------------------------
 const LoadTotalNewsDetaild = async (id) => {
+  // spiner  start---------------------------------------------------------------------------------------------
   const spinner = document.getElementById('spinner');
   spinner.classList.remove('d-none');
 
-  // spiner  start------------------------------------------------------
   
   
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`
@@ -147,11 +147,19 @@ const LoadTotalNewsDetaild = async (id) => {
 const displayCategoryDetails = category => {
   // console.log(cat);
   const catCountElemnet = document.getElementById('categoryInputCount');
-  catCountElemnet.innerText = (category.length);
+ 
+ 
+  // data found---------------------------------------------------------------
+  if (category.length === 0) {
+    catCountElemnet.innerText = ('Sorry! No data found')
+  }
+  else {
+    catCountElemnet.innerText = (category.length + ' ' + 'items Found in this category');
+  }
 
 
   const categoryDetails = document.getElementById('categoryDetails');
-  // const div = document.createElement('div')
+  const div = document.createElement('div')
 
 
 
