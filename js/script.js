@@ -145,6 +145,10 @@ const LoadTotalNewsDetaild = async (id) => {
 
 // Create A Function to Get Category Input-------------------------------------------------------------------------
 const displayCategoryDetails = category => {
+  
+  category.sort(function (a, b) {
+    return b.total_view - a.total_view
+  });
   // console.log(cat);
   const catCountElemnet = document.getElementById('categoryInputCount');
  
