@@ -198,11 +198,10 @@ const showModalDetails = modalInfo => {
    <img src="${modalInfo.image_url ? modalInfo.image_url : 'Image Not Found'}" class="img-fluid rounded-start" alt="...">
     <p class="card-text m-5">${modalInfo.details.slice(0, 500) ? modalInfo.details.slice(0, 300) : 'Describtion Not Found'}...</p>
     <div class='d-flex'>
-    <img src="${modalInfo.author.img ? modalInfo.author.img : 'Author Image Not Found'}" class="thumbnail-img" alt="...">
+      <img src="${modalInfo.author.img ? modalInfo.author.img : 'Author Image Not Found'}" class="thumbnail-img" alt="...">
     <div class='d-flex'>
-      <div></div>
       <p>Author Name: ${modalInfo.author.name} </p>
-        <p>${modalInfo.author.published_date ? modalInfo.author.published_date : 'Publish Date Not Found'} </p>
+      <p>${modalInfo.author.published_date ? modalInfo.author.published_date : 'Publish Date Not Found'} </p>
       <span class="mr-5 ps-5">View: ${modalInfo.total_view ? modalInfo.total_view : 'Total View Not Found'}</span>
     </div>
   </div>
